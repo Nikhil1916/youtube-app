@@ -1,5 +1,7 @@
 import React from 'react'
 import { menu_icon, search_icon, user_icon, youtube_logo } from '../Utils/constants'
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Head = () => {
   return (
@@ -8,13 +10,13 @@ const Head = () => {
             <img src={menu_icon} className='h-10' alt="menu" />
             <img src={youtube_logo} className='h-20 mx-2' alt="youtube_logo" />
         </div>
-        <div className='col-span-10 flex items-center items-stretch h-12'>
-            <input type='text' className='p-2 rounded w-[80%] border border-gray-200 rounded-l-2xl' placeholder='search'/>
-            <div className='bg-gray-200 w-18 p-2'>
-                <img src={search_icon} className='h-10' alt="youtube_logo" /> 
+        <div className='col-span-10 flex items-center'>
+            <input type='text' className='h-12 p-2 rounded w-[80%] border border-gray-200 rounded-l-full' placeholder='Search'/>
+            <div className='bg-gray-200 p-4 h-12 flex items-center justify-center rounded-r-full'>
+            <FontAwesomeIcon className='w-9 h-7 font-light search-icon' icon={faMagnifyingGlass} />
             </div>
         </div>
-        <div className='col-span-1'>
+        <div className='col-span-1 flex items-center    '>
         <img src={user_icon} className='h-10' alt="user_icon" />
         </div>
    </div>

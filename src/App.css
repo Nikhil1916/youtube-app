@@ -1,0 +1,6 @@
+.search-icon {
+    -webkit-text-stroke: 1px background-color;
+  }
+  ::placeholder {
+    text-align: center; 
+ }
