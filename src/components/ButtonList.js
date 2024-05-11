@@ -4,7 +4,6 @@ import { buttonList } from '../Utils/constants'
 import { useSelector } from 'react-redux';
 
 const ButtonList = () => {
-  // console.log(buttonList);
   const menuState = useSelector(store=>store.app.isMenuOpen);
   return (
     
