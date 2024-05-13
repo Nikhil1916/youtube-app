@@ -27,4 +27,5 @@ export const buttonList = [
     {name:"naruto", id:11}
 ];
 
-export const YOUTUBE_MOST_POPULAR_API = "https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&maxResults=50&key=AIzaSyCyW6Ift3mxGSzfYiwpvsgzOpFYQOmdR5g"
+export const YOUTUBE_MOST_POPULAR_API = "https://www.googleapis.com/youtube/v3/videos?part=snippet%2CcontentDetails%2Cstatistics&chart=mostPopular&regionCode=IN&maxResults=50&key=AIzaSyCyW6Ift3mxGSzfYiwpvsgzOpFYQOmdR5g";
+export const YOUTUBE_SEARCH_SUGGESTION_API = "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";

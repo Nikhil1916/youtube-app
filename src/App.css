@@ -34,7 +34,7 @@
     left: 0;
     width: 100%;
     padding: 10px;
-    z-index: 1000;
+    z-index: 1001;
 }
 
 .backdrop {
