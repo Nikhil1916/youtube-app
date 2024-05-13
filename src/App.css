@@ -14,3 +14,36 @@
 ::-webkit-scrollbar-thumb {
     background: transparent;
 }
+
+#sidebar {
+    background-color: #ffffff;
+    /* width: 405px; */
+    height: 100vh;
+    padding: 10px;
+    float: left;
+    position: fixed;
+    z-index: 1001;
+    cursor: pointer;
+    /* top: 4rem; */
+}
+
+
+#header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    z-index: 1000;
+}
+
+.backdrop {
+    position: fixed;
+    background-color: #2b2d42;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+}

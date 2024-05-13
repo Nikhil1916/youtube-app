@@ -4,11 +4,11 @@ import VideoContainer from './VideoContainer'
 
 const MainContainer = () => {
   return (
-    <div>
-        <ButtonList/>
-        <VideoContainer/>
+    <div id="pageContent" className="mt-16">
+      <ButtonList />
+      <VideoContainer />
     </div>
-  )
+  );
 }
 
 export default MainContainer

@@ -11,7 +11,7 @@ const WatchPage = () => {
     const [searchParam] = useSearchParams();
     console.log(searchParam.get("v"));
   return (
-    <div   className='aspect-video'>
+    <div className='aspect-video flex items-center justify-center mx-10 mt-16'>
       <iframe
         width="800"
         height="400"

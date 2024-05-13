@@ -12,7 +12,7 @@ const Head = () => {
   }
 
   return (
-   <div className='grid grid-flow-col px-5 py-2 my-2 shadow-lg'>
+   <div className='grid grid-flow-col px-5 py-2 mb-2 shadow-lg bg-white' id="header">
         <div className='flex items-center col-span-1'> 
             <img src={menu_icon} className='h-8 cursor-pointer' alt="menu" onClick={handleMenu} />
             <img src={youtube_logo} className='h-10 mx-2 cursor-pointer' alt="youtube_logo" />
