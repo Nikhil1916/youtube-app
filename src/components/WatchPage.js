@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { closeMenu } from '../Utils/appSlice';
 import { useParams, useSearchParams } from 'react-router-dom';
+import CommentContainer from './CommentContainer';
 
 const WatchPage = () => {
     const dispath = useDispatch();
@@ -11,7 +12,8 @@ const WatchPage = () => {
     const [searchParam] = useSearchParams();
     console.log(searchParam.get("v"));
   return (
-    <div className='aspect-video flex items-center justify-center mx-10 mt-16'>
+    <div className='flex flex-col mx-10 mt-16'>
+    <div>
       <iframe
         width="800"
         height="400"
@@ -21,6 +23,11 @@ const WatchPage = () => {
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         referrerpolicy="strict-origin-when-cross-origin"
       ></iframe>
+    </div>
+    <CommentContainer/>
+    <div>
+
+    </div>
     </div>
   );
 }
