@@ -4,7 +4,8 @@ import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../Utils/appSlice'
-import { cacheResults } from '../Utils/searchSlice'
+import { cacheResults, searchedMovies } from '../Utils/searchSlice'
+import { getMovieSuggestions } from '../Utils/functions'
 
 const Head = () => {
   const dispath = useDispatch();
@@ -18,7 +19,6 @@ const Head = () => {
   useEffect(()=>{  
     if(!searchInput) return;
     const getSuggestions = async() => {
-      // console.log(searchCache);
       if(searchCache[searchInput]) {
         setSuggestions(searchCache[searchInput]);
         return;
@@ -39,20 +39,15 @@ const Head = () => {
       clearTimeout(searchTimeout);
     }
   },[searchInput]);
-  useEffect(()=>{
-    return ()=>{
-      // console.log("Component un m/ount");
-    }
-  },[]);
   const handleSearch = (e) => {
-    // console.log(e.target.value);
     setSearchInput(e.target.value)
   }
 
-  const handleSuggestionClick = (e) => {
-    console.log("1");
+  const handleSuggestionClick = async(e) => {
     setShowSuggestions(false)
-    console.log(e, e.target.innerText);
+    const movies = await getMovieSuggestions(e.target.innerText);
+    console.log(movies);
+    dispath(searchedMovies(movies?.items))
   }
 
   return (
