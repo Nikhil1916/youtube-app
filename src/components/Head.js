@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleMenu } from '../Utils/appSlice'
 import { cacheResults, searchedMovies } from '../Utils/searchSlice'
 import { getMovieSuggestions } from '../Utils/functions'
+import { Link } from 'react-router-dom'
 
 const Head = () => {
   const dispath = useDispatch();
@@ -60,7 +61,9 @@ const Head = () => {
    <div className='grid grid-flow-col px-5 py-2 mb-2 shadow-lg bg-white' id="header">
         <div className='flex items-center col-span-1'> 
             <img src={menu_icon} className='h-8 cursor-pointer' alt="menu" onClick={handleMenu} />
+            <Link to="/">
             <img src={youtube_logo} className='h-10 mx-2 cursor-pointer' alt="youtube_logo" />
+            </Link>
         </div>
         <div className='col-span-10' onMouseLeave={()=>setShowSuggestions(false)}>
           <div className="flex items-center">

@@ -1,27 +1,27 @@
 export const commentsData = [
   {
-    name: "Akshay Saini",
+    name: "Nikhil Chawla",
     text: "lorem lorem lorem lorem",
     replies: [
       {
-        name: "Akshay Saini",
+        name: "Nikhil Chawla",
         text: "lorem lorem lorem lorem",
         replies: [
           {
-            name: "Akshay Saini",
+            name: "Nikhil Chawla",
             text: "lorem lorem lorem lorem",
             replies: [],
           },
           {
-            name: "Akshay Saini",
+            name: "Nikhil Chawla",
             text: "lorem lorem lorem lorem",
             replies: [ {
-                name: "Akshay Saini",
+                name: "Nikhil Chawla",
                 text: "lorem lorem lorem lorem",
                 replies: [],
               },
               {
-                name: "Akshay Saini",
+                name: "Nikhil Chawla",
                 text: "lorem lorem lorem lorem",
                 replies: [],
               },],
@@ -29,52 +29,52 @@ export const commentsData = [
         ],
       },
       {
-        name: "Akshay Saini",
+        name: "Nikhil Chawla",
         text: "lorem lorem lorem lorem",
         replies: [],
       },
     ],
   },
   {
-    name: "Akshay Saini",
+    name: "Nikhil Chawla",
     text: "lorem lorem lorem lorem",
     replies: [ {
-        name: "Akshay Saini",
+        name: "Nikhil Chawla",
         text: "lorem lorem lorem lorem",
         replies: [],
       },
       {
-        name: "Akshay Saini",
+        name: "Nikhil Chawla",
         text: "lorem lorem lorem lorem",
         replies: [ {
-            name: "Akshay Saini",
+            name: "Nikhil Chawla",
             text: "lorem lorem lorem lorem",
             replies: [],
           },
           {
-            name: "Akshay Saini",
+            name: "Nikhil Chawla",
             text: "lorem lorem lorem lorem",
             replies: [],
           },],
       },],
   },
   {
-    name: "Akshay Saini",
+    name: "Nikhil Chawla",
     text: "lorem lorem lorem lorem",
     replies: [],
   },
   {
-    name: "Akshay Saini",
+    name: "Nikhil Chawla",
     text: "lorem lorem lorem lorem",
     replies: [],
   },
   {
-    name: "Akshay Saini",
+    name: "Nikhil Chawla",
     text: "lorem lorem lorem lorem",
     replies: [],
   },
   {
-    name: "Akshay Saini",
+    name: "Nikhil Chawla",
     text: "lorem lorem lorem lorem",
   },
 ];

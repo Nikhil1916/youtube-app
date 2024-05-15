@@ -8,9 +8,9 @@ const WatchPage = () => {
     const dispath = useDispatch();
     useEffect(()=>{
         dispath(closeMenu());
+        window.scroll(0,0);
     },[]);
     const [searchParam] = useSearchParams();
-    console.log(searchParam.get("v"));
   return (
     <div className='flex flex-col mx-10 mt-16'>
     <div>
@@ -24,9 +24,8 @@ const WatchPage = () => {
         referrerpolicy="strict-origin-when-cross-origin"
       ></iframe>
     </div>
-    <CommentContainer/>
+    <CommentContainer />
     <div>
-
     </div>
     </div>
   );
