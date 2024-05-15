@@ -15,6 +15,7 @@ const Head = () => {
   const [searchInput, setSearchInput] = useState('');
   const [suggestion, setSuggestions] = useState([]);
   const [showSuggestion , setShowSuggestions] = useState(false);
+  const searchRef = useRef();
   const searchCache = useSelector(store=>store.search.suggestionSearch);
   useEffect(()=>{  
     if(!searchInput) return;
@@ -39,14 +40,19 @@ const Head = () => {
       clearTimeout(searchTimeout);
     }
   },[searchInput]);
+
   const handleSearch = (e) => {
-    setSearchInput(e.target.value)
+    if(e) {
+      setSearchInput(e.target.value)
+    } else {
+      setSearchInput(searchRef.current.value);
+    }
   }
 
   const handleSuggestionClick = async(e) => {
     setShowSuggestions(false)
+    setSearchInput(e.target.innerText);
     const movies = await getMovieSuggestions(e.target.innerText);
-    console.log(movies);
     dispath(searchedMovies(movies?.items))
   }
 
@@ -58,13 +64,13 @@ const Head = () => {
         </div>
         <div className='col-span-10' onMouseLeave={()=>setShowSuggestions(false)}>
           <div className="flex items-center">
-              <input type='text' className='h-10 p-2 rounded w-[80%] border border-gray-200 rounded-l-full focus:border-yellow-600' placeholder='Search' value={searchInput} onChange={(e)=>{handleSearch(e)}} onFocus={()=>setShowSuggestions(true)} />
-              <div className='bg-gray-200 p-4 h-10 flex items-center justify-center rounded-r-full'>
+              <input type='text' className='h-10 p-2 rounded w-[80%] border border-gray-200 rounded-l-full focus:border-yellow-600' placeholder='Search' value={searchInput} onChange={(e)=>{handleSearch(e)}} onFocus={()=>setShowSuggestions(true)} ref={searchRef} />
+              <div className='bg-gray-200 p-4 h-10 flex items-center justify-center rounded-r-full' onClick={()=>handleSearch()}>
               <FontAwesomeIcon className='w-9 h-7 font-light search-icon cursor-pointer' icon={faMagnifyingGlass} />
               </div>
           </div>
         {
-          showSuggestion  && suggestion?.length > 0 &&  <div className="fixed bg-white py-2 w-[60%] rounded-lg shadow-lg border border-gray-100">
+          showSuggestion && suggestion?.length > 0 &&  <div className="fixed bg-white py-2 w-[60%] rounded-lg shadow-lg border border-gray-100">
               <ul>
               {
                 suggestion?.map((suggestion)=><li className='py-2 px-3 shadow-sm hover:bg-gray-100' key={suggestion} onClick={handleSuggestionClick}> <FontAwesomeIcon className='w-4 h-4 mr-2 font-light search-icon cursor-pointer' icon={faMagnifyingGlass} />{suggestion}</li>)
@@ -74,7 +80,7 @@ const Head = () => {
 
         }
         </div>
-        <div className='col-span-1 flex items-center    '>
+        <div className='col-span-1 flex items-center cursor-pointer'>
         <img src={user_icon} className='h-10' alt="user_icon" />
         </div>
    </div>
