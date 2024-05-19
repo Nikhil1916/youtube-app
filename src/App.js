@@ -1,15 +1,16 @@
 import { Provider } from "react-redux";
 import "./App.css";
 import Body from "./components/Body";
-import Head from "./components/Head";
 import appStore from "./Utils/appStore";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import MainContainer from "./components/MainContainer";
 import WatchPage from "./components/WatchPage";
+import Error from "./components/Error";
 const appRouter = createBrowserRouter([
   {
     path:"/",
     element:<Body/>,
+    errorElement:<Error/>,
     children: [
       {
         path:"/",
@@ -18,7 +19,7 @@ const appRouter = createBrowserRouter([
       {
         path:"/watch",
         element:<WatchPage/>
-      }
+      },
     ]
   }
 ])
