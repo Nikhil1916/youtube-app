@@ -39,11 +39,10 @@
 
 .backdrop {
     position: fixed;
-    background-color: #2b2d42;
+    background-color: #2b2d42d7;
     z-index: 1000;
     left: 0;
     top: 0;
     right: 0;
     bottom: 0;
-    opacity: 0;
 }
